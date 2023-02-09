@@ -1,0 +1,20 @@
+kind: HTTPChaos
+apiVersion: chaos-mesh.org/v1alpha1
+metadata:
+  namespace: default
+  name: delay
+  annotations:
+    experiment.chaos-mesh.org/pause: 'true'
+spec:
+  selector:
+    namespaces:
+      - default
+    labelSelectors:
+      app: frontend
+  mode: one
+  target: Request
+  delay: 200ms
+  port: 80
+  path: '*'
+  method: GET
+  duration: 5m
