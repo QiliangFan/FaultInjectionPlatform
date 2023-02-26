@@ -85,7 +85,7 @@ spec:
         - name: FRONTEND_ADDR
           value: "{{ .Values.frontend.name }}:80"
         - name: USERS
-          value: "10"
+          value: "20"
         resources:
           requests:
             cpu: 300m

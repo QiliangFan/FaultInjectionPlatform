@@ -62,6 +62,7 @@ minikube addons enable default-storageclass
 minikube addons enable storage-provisioner
 # ！下面这步是必须的：(因为ES的安装默认是分布式而非单机集群，因此需要修改)
 # modify the `createCert: false` to `createCert: true` to disable ssl 
+# modify the `protocol: https` to `protocol: http`
 cd elasticsearch/examples/minikube
 sed -i 's/helm-es-minikube/elasticsearch/g' Makefile
 sed -i 's/helm upgrade --wait/helm upgrade -n elastic --wait/g' Makefile

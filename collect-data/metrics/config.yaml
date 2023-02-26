@@ -1,0 +1,13 @@
+api: http://10.10.1.224:8080
+pods:
+  - adservice
+  - cartservice
+  - checkoutservice
+  - currencyservice
+  - emailservice
+  - frontend
+  - paymentservice
+  - productcatalogservice
+  - recommendationservice
+  - redis
+  - shippingservice

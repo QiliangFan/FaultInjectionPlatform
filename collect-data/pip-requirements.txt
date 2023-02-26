@@ -1,0 +1,5 @@
+pylint
+prometheus-api-client
+pyyaml
+matplotlib
+kubernetes

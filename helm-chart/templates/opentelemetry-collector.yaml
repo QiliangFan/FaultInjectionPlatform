@@ -60,7 +60,7 @@ spec:
         - '/bin/sh'
         - '-c'
         - |
-           sed "s/PROJECT_ID/$(curl -H 'Metadata-Flavor: Google' http://metadata.google.internal/computeMetadata/v1/project/project-id)/" /template/collector-gateway-config-template.yaml >> /conf/collector-gateway-config.yaml
+           cat /template/collector-gateway-config-template.yaml >> /conf/collector-gateway-config.yaml
         volumeMounts:
         - name: collector-gateway-config-template
           mountPath: /template
@@ -124,20 +124,35 @@ data:
       otlp:
         protocols: 
           grpc:
+          # http:
     processors:
+      memory_limiter:
+        check_interval: 1s
+        limit_mib: 2000
+      batch:
     exporters:
-      googlecloud:
-        project: {{ .Values.opentelemetryCollector.projectId | quote }}
+      logging:
+        loglevel: warn
+      otlp/elastic:
+        endpoint: "http://10.106.37.172:8200"
+        headers:
+          Authorization: "Bearer elastic"
+        tls:
+          insecure: true
+          insecure_skip_verify: true
     service:
       pipelines:
         traces:
           receivers: [otlp] # Receive otlp-formatted data from other collector instances
-          processors: []
-          exporters: [googlecloud] # Export traces directly to Google Cloud
+          processors: [batch]
+          exporters: [logging, otlp/elastic] 
         metrics:
           receivers: [otlp]
-          processors: []
-          exporters: [googlecloud] # Export metrics to Google Cloud
+          processors: [batch]
+          exporters: [logging, otlp/elastic] 
+        logs:
+          receivers: [otlp]
+          exporters: [logging, otlp/elastic]
 {{- if .Values.networkPolicies.create }}
 ---
 apiVersion: networking.k8s.io/v1
