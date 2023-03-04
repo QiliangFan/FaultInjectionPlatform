@@ -124,7 +124,11 @@ data:
       otlp:
         protocols: 
           grpc:
-          # http:
+          http:
+            cors:
+              allowed_origins:
+                - http://*
+                - https://*
     processors:
       memory_limiter:
         check_interval: 1s
@@ -133,26 +137,21 @@ data:
     exporters:
       logging:
         loglevel: warn
-      otlp/elastic:
-        endpoint: "http://10.106.37.172:8200"
-        headers:
-          Authorization: "Bearer elastic"
+      jaeger:
+        endpoint: "http://:14250"
         tls:
           insecure: true
           insecure_skip_verify: true
+        sending_queue:
+          enabled: true
+          num_consumers: 100
+          queue_size: 10000
     service:
       pipelines:
         traces:
           receivers: [otlp] # Receive otlp-formatted data from other collector instances
           processors: [batch]
-          exporters: [logging, otlp/elastic] 
-        metrics:
-          receivers: [otlp]
-          processors: [batch]
-          exporters: [logging, otlp/elastic] 
-        logs:
-          receivers: [otlp]
-          exporters: [logging, otlp/elastic]
+          exporters: [jaeger] 
 {{- if .Values.networkPolicies.create }}
 ---
 apiVersion: networking.k8s.io/v1

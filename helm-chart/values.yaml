@@ -3,9 +3,9 @@
 # Declare variables to be passed into your templates.
 
 images:
-  repository: gcr.io/google-samples/microservices-demo
+  repository: fanqiliang
   # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "0.0.1"
 
 serviceAccounts:
   # Specifies whether service accounts should be created.
@@ -31,7 +31,7 @@ authorizationPolicies:
   create: false
 
 opentelemetryCollector:
-  create: true
+  create: false
   name: opentelemetrycollector
   # Specifies the project id for the otel collector. If set as "PROJECT_ID" (default value), an initContainer will automatically retrieve the project id value from the metadata server.
   projectId: "PROJECT_ID"
