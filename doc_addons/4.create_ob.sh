@@ -4,7 +4,7 @@ if [ ! -d helm-chart ] ; then
 fi
 
 # remove old images
-minikube image ls | grep fanqiliang | xargs -i sh -c "minikube image rm {}"
+minikube image ls | grep fanqiliang | xargs -i sh -c "minikube image rm -v=1 {}"
 
 # bash doc_addons/4.create_ob.sh
 helm install onlineboutique ./helm-chart
