@@ -24,4 +24,7 @@ sudo install minikube-linux-amd64 /usr/local/bin/minikube
 minikube version
 
 # helm charts 
+sudo apt install snapd
 sudo snap install helm --classic
+# 如果通过snap安装不成功，则可执行这条指令：
+# curl https://raw.githubusercontent.com/helm/helm/main/scripts/get-helm-3 | bash
