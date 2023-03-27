@@ -21,6 +21,9 @@ roles:
   - remote_cluster_client
   - transform
 
+replicas: 1
+minimumMasterNodes: 1
+
 esMajorVersion: ""
 
 # Allows you to add any config files in /usr/share/elasticsearch/config/

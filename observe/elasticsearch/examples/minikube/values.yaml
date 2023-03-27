@@ -14,7 +14,6 @@ resources:
     cpu: "1000m"
     memory: "1024M"
 
-replicas: 1
 
 # Request smaller persistent volumes.
 volumeClaimTemplate:
