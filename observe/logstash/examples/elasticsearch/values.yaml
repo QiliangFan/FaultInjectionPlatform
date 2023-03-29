@@ -8,8 +8,10 @@ logstashConfig:
 
 logstashPipeline:
   uptime.conf: |
-    input { exec { command => "uptime" interval => 30 } }
     output {
+      stdout {
+        codec => rubydebug   
+      }
       elasticsearch {
         hosts => ["https://elasticsearch-master:9200"]
         user => '${ELASTICSEARCH_USERNAME}'
@@ -35,3 +37,13 @@ secretMounts:
   - name: elasticsearch-master-certs
     secretName: elasticsearch-master-certs
     path: /usr/share/logstash/config/certs
+service:
+  name: logstash
+  type: ClusterIP
+  ports:
+    - name: beats
+      port: 5044
+      targetPort: 5044
+  selector:
+    app: logstash-logstash
+
