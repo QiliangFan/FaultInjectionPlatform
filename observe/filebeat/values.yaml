@@ -75,11 +75,11 @@ daemonset:
     privileged: false
   resources:
     requests:
-      cpu: "100m"
-      memory: "100Mi"
+      cpu: "400m"
+      memory: "500Mi"
     limits:
       cpu: "1000m"
-      memory: "200Mi"
+      memory: "2000Mi"
   tolerations: []
 
 deployment:
