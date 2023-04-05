@@ -46,6 +46,8 @@ else
     minikube image load metricbeat.tar
 fi
 
+cd observe
+kubectl create namespace observe
 
 # Chaos-mesh (for fault injection)
 helm repo add chaos-mesh https://charts.chaos-mesh.org
@@ -89,9 +91,9 @@ make install
 cd -
 
 # Metricbeat
-# cd metricbeat
-# helm dependency build
-# cd ..
+cd metricbeat
+helm dependency build
+cd ..
 helm install metricbeat ./metricbeat -n observe
 
 # # prometheus
