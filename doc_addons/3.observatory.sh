@@ -48,14 +48,10 @@ fi
 
 
 # Chaos-mesh (for fault injection)
-# helm repo add chaos-mesh https://charts.chaos-mesh.org
-# kubectl create ns chaos-mesh
-# helm install chaos-mesh chaos-mesh/chaos-mesh -n=chaos-mesh --version 2.5.1
-# cd chaos-mesh
-# kubectl apply -f rbac.yaml
-# kubectl create token account-cluster-manager-bjrvn > chaos_mesh_token.txt
-# cd ..
-
+helm repo add chaos-mesh https://charts.chaos-mesh.org
+kubectl create ns chaos-mesh
+helm install chaos-mesh chaos-mesh/chaos-mesh -n=chaos-mesh --version 2.5.1
+helm upgrade chaos-mesh chaos-mesh/chaos-mesh --namespace=chaos-mesh --version 2.5.1 --set dashboard.securityMode=false
 kubectl create namespace observe
 cd observe
 
