@@ -48,6 +48,7 @@ fi
 
 
 # Chaos-mesh (for fault injection)
+helm repo add chaos-mesh https://charts.chaos-mesh.org
 helm install chaos-mesh chaos-mesh/chaos-mesh -n=observe --version 2.5.1
 helm upgrade chaos-mesh chaos-mesh/chaos-mesh --namespace=observe --version 2.5.1 --set dashboard.securityMode=false
 
