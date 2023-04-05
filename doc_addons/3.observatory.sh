@@ -48,12 +48,8 @@ fi
 
 
 # Chaos-mesh (for fault injection)
-helm repo add chaos-mesh https://charts.chaos-mesh.org
-kubectl create ns chaos-mesh
-helm install chaos-mesh chaos-mesh/chaos-mesh -n=chaos-mesh --version 2.5.1
-helm upgrade chaos-mesh chaos-mesh/chaos-mesh --namespace=chaos-mesh --version 2.5.1 --set dashboard.securityMode=false
-kubectl create namespace observe
-cd observe
+helm install chaos-mesh chaos-mesh/chaos-mesh -n=observe --version 2.5.1
+helm upgrade chaos-mesh chaos-mesh/chaos-mesh --namespace=observe --version 2.5.1 --set dashboard.securityMode=false
 
 # Elasticsearch (注意，必须要开启mnikube的这两个插件，否则无法成功运行elasticsearch)
 minikube addons enable default-storageclass
