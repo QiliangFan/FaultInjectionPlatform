@@ -13,3 +13,6 @@ kubectl port-forward svc/grafana -n observe 8080:80 --address 0.0.0.0
 
 # The Prometheus （注意：内部通过代理真实的转向是9090而非80）
 kubectl port-forward svc/prometheus-server -n observe --address 0.0.0.0 9090:80
+
+# The Chao-Mesh
+kubectl port-forward svc/chaos-dashboard -n chaos-mesh --address 0.0.0.0 2333:2333
