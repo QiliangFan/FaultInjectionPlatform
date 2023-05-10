@@ -5,7 +5,7 @@
 #
 # An optional version can be specified for Docker image tag to use for upgrade.
 # This is required for main branch because upgrade from Elasticsearch 7.X
-# to 8.4.2 doesn't work.
+# to 8.7.1 doesn't work.
 #
 set -euo pipefail
 

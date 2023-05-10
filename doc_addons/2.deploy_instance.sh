@@ -25,4 +25,4 @@ fi
 
 # minikube start --image-mirror-country=cn --registry-mirror https://dockerhub.azk8s.cn
 
-minikube start --docker-env http_proxy $http_proxy --docker-env https_proxy $https_proxy --docker-env no_proxy $no_proxy --cpus=8 --memory 16384 --disk-size 128g
+minikube start --docker-env http_proxy $http_proxy --docker-env https_proxy $https_proxy --docker-env no_proxy $no_proxy --cpus=16 --memory 32768 --disk-size 1024g

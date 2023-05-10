@@ -5,43 +5,43 @@
 cd ../
 
 if [ ! -f apm-server.tar ] ; then
-    minikube image load docker.elastic.co/apm/apm-server:8.4.2
-    minikube image save docker.elastic.co/apm/apm-server:8.4.2 apm-server.tar
+    minikube image load docker.elastic.co/apm/apm-server:8.7.1
+    minikube image save docker.elastic.co/apm/apm-server:8.7.1 apm-server.tar
 else
     minikube image load apm-server.tar
 fi
 
 if [ ! -f elasticsearch.tar ] ; then
-    minikube image load docker.elastic.co/elasticsearch/elasticsearch:8.4.2
-    minikube image save docker.elastic.co/elasticsearch/elasticsearch:8.4.2 elasticsearch.tar
+    minikube image load docker.elastic.co/elasticsearch/elasticsearch:8.7.1
+    minikube image save docker.elastic.co/elasticsearch/elasticsearch:8.7.1 elasticsearch.tar
 else
     minikube image load elasticsearch.tar
 fi
 
 if [ ! -f filebeat.tar ] ; then
-    minikube image load docker.elastic.co/beats/filebeat:8.4.2
-    minikube image save docker.elastic.co/beats/filebeat:8.4.2 filebeat.tar
+    minikube image load docker.elastic.co/beats/filebeat:8.7.1
+    minikube image save docker.elastic.co/beats/filebeat:8.7.1 filebeat.tar
 else
     minikube image load filebeat.tar
 fi
 
 if [ ! -f kibana.tar ] ; then
-    minikube image load docker.elastic.co/kibana/kibana:8.4.2
-    minikube image save docker.elastic.co/kibana/kibana:8.4.2 kibana.tar
+    minikube image load docker.elastic.co/kibana/kibana:8.7.1
+    minikube image save docker.elastic.co/kibana/kibana:8.7.1 kibana.tar
 else
     minikube image load kibana.tar
 fi
 
 if [ ! -f logstash.tar ] ; then
-    minikube image load docker.elastic.co/logstash/logstash:8.4.2
-    minikube image save docker.elastic.co/logstash/logstash:8.4.2 logstash.tar
+    minikube image load docker.elastic.co/logstash/logstash:8.7.1
+    minikube image save docker.elastic.co/logstash/logstash:8.7.1 logstash.tar
 else
     minikube image load logstash.tar
 fi
 
 if [ ! -f metricbeat.tar ] ; then
-    minikube image load docker.elastic.co/beats/metricbeat:8.4.2
-    minikube image save docker.elastic.co/beats/metricbeat:8.4.2 metricbeat.tar
+    minikube image load docker.elastic.co/beats/metricbeat:8.7.1
+    minikube image save docker.elastic.co/beats/metricbeat:8.7.1 metricbeat.tar
 else
     minikube image load metricbeat.tar
 fi
@@ -91,10 +91,10 @@ make install
 cd -
 
 # Metricbeat
-cd metricbeat
-helm dependency build
-cd ..
-helm install metricbeat ./metricbeat -n observe
+# cd metricbeat
+# helm dependency build
+# cd ..
+# helm install metricbeat ./metricbeat -n observe
 
 # # prometheus
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts

@@ -53,7 +53,7 @@
                                 }
                             }
                         ],
-                        "image": "docker.elastic.co/apm/apm-server:8.4.2",
+                        "image": "docker.elastic.co/apm/apm-server:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "livenessProbe": {
                             "failureThreshold": 3,
@@ -227,7 +227,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://21807ae092c24d055b118957d196a4f9c628e01d1c58751ea6a0519faa815b81",
-                        "image": "docker.elastic.co/apm/apm-server:8.4.2",
+                        "image": "docker.elastic.co/apm/apm-server:8.7.1",
                         "imageID": "docker://sha256:9c735787953f5e2e9f27c13a7d3ed555266103c4ea0db6a95a5d621ab48d3ed9",
                         "lastState": {},
                         "name": "apm-server",
@@ -392,7 +392,7 @@
                                 "value": "/usr/share/elasticsearch/config/certs/ca.crt"
                             }
                         ],
-                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.4.2",
+                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "name": "elasticsearch",
                         "ports": [
@@ -470,7 +470,7 @@
                             "-w",
                             "vm.max_map_count=262144"
                         ],
-                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.4.2",
+                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "name": "configure-sysctl",
                         "resources": {},
@@ -600,7 +600,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://f61ac79ee7808f8cd6e0a26c4266f85b0ea1eea63c4567a67c9f511553181f4c",
-                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.4.2",
+                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.7.1",
                         "imageID": "docker://sha256:9d4620cd27bd0baf642c43f315363cc605c83d2f685b0a81842ee8e748730825",
                         "lastState": {},
                         "name": "elasticsearch",
@@ -618,7 +618,7 @@
                 "initContainerStatuses": [
                     {
                         "containerID": "docker://1dd33d273934c776ad5c8e05f167c0b4b2dcad187d3250f0eadc3dae57c5a685",
-                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.4.2",
+                        "image": "docker.elastic.co/elasticsearch/elasticsearch:8.7.1",
                         "imageID": "docker://sha256:9d4620cd27bd0baf642c43f315363cc605c83d2f685b0a81842ee8e748730825",
                         "lastState": {},
                         "name": "configure-sysctl",
@@ -657,7 +657,7 @@
                 "generateName": "filebeat-filebeat-",
                 "labels": {
                     "app": "filebeat-filebeat",
-                    "chart": "filebeat-8.4.2",
+                    "chart": "filebeat-8.7.1",
                     "controller-revision-hash": "59d5dd4d87",
                     "heritage": "Helm",
                     "pod-template-generation": "1",
@@ -743,7 +743,7 @@
                                 }
                             }
                         ],
-                        "image": "docker.elastic.co/beats/filebeat:8.4.2",
+                        "image": "docker.elastic.co/beats/filebeat:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "livenessProbe": {
                             "exec": {
@@ -984,7 +984,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://a16ef8e68904c7905ff5a26cf658f76f9d1b0b82b04a4ad5366a3b8440eea387",
-                        "image": "docker.elastic.co/beats/filebeat:8.4.2",
+                        "image": "docker.elastic.co/beats/filebeat:8.7.1",
                         "imageID": "docker://sha256:17d2f888f81f337b24fbcd017cfade77a7ccee1bc9ade2d5494ed3e5a7a91127",
                         "lastState": {},
                         "name": "filebeat",
@@ -1068,7 +1068,7 @@
                                 "value": "--max-old-space-size=1800"
                             }
                         ],
-                        "image": "docker.elastic.co/kibana/kibana:8.4.2",
+                        "image": "docker.elastic.co/kibana/kibana:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "name": "kibana",
                         "ports": [
@@ -1240,7 +1240,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://0485f41d132389181e4cfa954c5ab221029c9241e40f1895e53c9059bce61b67",
-                        "image": "docker.elastic.co/kibana/kibana:8.4.2",
+                        "image": "docker.elastic.co/kibana/kibana:8.7.1",
                         "imageID": "docker://sha256:1a5dbfe4bf27f49e2717a021e936de38db6c89b7e154aeecc99979fcef2f5aa5",
                         "lastState": {},
                         "name": "kibana",
@@ -1346,7 +1346,7 @@
                                 }
                             }
                         ],
-                        "image": "docker.elastic.co/logstash/logstash:8.4.2",
+                        "image": "docker.elastic.co/logstash/logstash:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "livenessProbe": {
                             "failureThreshold": 3,
@@ -1556,7 +1556,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://49df9cad64c2fa0e0ac2de3422edfe9f1a165bb5d617c180961e5a3d02d6b7c2",
-                        "image": "docker.elastic.co/logstash/logstash:8.4.2",
+                        "image": "docker.elastic.co/logstash/logstash:8.7.1",
                         "imageID": "docker://sha256:db6effbaf70b80bf3c9a80a972413720c5e9c285b8ecaf37cb88a9362835f0fd",
                         "lastState": {},
                         "name": "logstash",
@@ -1804,7 +1804,7 @@
                 "generateName": "metricbeat-metricbeat-metrics-59bbff74d4-",
                 "labels": {
                     "app": "metricbeat-metricbeat-metrics",
-                    "chart": "metricbeat-8.4.2",
+                    "chart": "metricbeat-8.7.1",
                     "pod-template-hash": "59bbff74d4",
                     "release": "metricbeat"
                 },
@@ -1865,7 +1865,7 @@
                                 }
                             }
                         ],
-                        "image": "docker.elastic.co/beats/metricbeat:8.4.2",
+                        "image": "docker.elastic.co/beats/metricbeat:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "livenessProbe": {
                             "exec": {
@@ -2041,7 +2041,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://a9962efeca27274034c81264b7b82e88ea21bba79fdabc1eeeabad1626e0550c",
-                        "image": "docker.elastic.co/beats/metricbeat:8.4.2",
+                        "image": "docker.elastic.co/beats/metricbeat:8.7.1",
                         "imageID": "docker://sha256:c43929043cdb7067021ad47f5c796f702096ee7f9c7f64baba0cd4d18d08339b",
                         "lastState": {},
                         "name": "metricbeat",
@@ -2078,7 +2078,7 @@
                 "generateName": "metricbeat-metricbeat-",
                 "labels": {
                     "app": "metricbeat-metricbeat",
-                    "chart": "metricbeat-8.4.2",
+                    "chart": "metricbeat-8.7.1",
                     "controller-revision-hash": "7ff48dddf8",
                     "heritage": "Helm",
                     "pod-template-generation": "1",
@@ -2165,7 +2165,7 @@
                                 }
                             }
                         ],
-                        "image": "docker.elastic.co/beats/metricbeat:8.4.2",
+                        "image": "docker.elastic.co/beats/metricbeat:8.7.1",
                         "imagePullPolicy": "IfNotPresent",
                         "livenessProbe": {
                             "exec": {
@@ -2412,7 +2412,7 @@
                 "containerStatuses": [
                     {
                         "containerID": "docker://72cc364cbcc5df80d4a588470203db95abda938dac9d2989e6e7c4617909e818",
-                        "image": "docker.elastic.co/beats/metricbeat:8.4.2",
+                        "image": "docker.elastic.co/beats/metricbeat:8.7.1",
                         "imageID": "docker://sha256:c43929043cdb7067021ad47f5c796f702096ee7f9c7f64baba0cd4d18d08339b",
                         "lastState": {},
                         "name": "metricbeat",
